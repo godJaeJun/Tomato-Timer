@@ -1,5 +1,6 @@
 import React, {Component} from 'react'; //리엑트를 불러온다.
 import {View, Text,StyleSheet,StatusBar } from 'react-native';//리엑트 네이티브에서 View와 Text, StyleSheet 불러옴
+import Button from '../Button'
 
 class Timer extends Component{
     render(){
@@ -10,7 +11,8 @@ class Timer extends Component{
                     <Text style={styles.time}>25:00</Text>
                 </View>
                 <View style={styles.lower}>
-                    <Text>BUTTONS HERE</Text>
+                    <Button iconName="play-circle" onPress={()=>alert("it works!")}/>
+                    <Button iconName="stop-circle" onPress={()=>alert("it works!")}/>
                 </View>
             </View>
         )
