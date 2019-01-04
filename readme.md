@@ -1,1 +1,4 @@
-리엑트 네이티브로 만든 타이머앱입니다.
+#TOMATO-TIMER
+ReactNative와 Redux를 사용하여만든 간단한 타이머 앱
+![Alt text](screenshot1.png)
+![Alt text](screenshot2.png)
