@@ -25,12 +25,12 @@ function addSeconds(){
 
 //Reducer
 //default state 시작시 상태
-const TIME_DURATION=1500;
+const TIMER_DURATION=1500;
 
 const initialState={
     isPlaying:false,
     elapsedTime:0,
-    timerDuration:TIME_DURATION
+    timerDuration:TIMER_DURATION
 }
 //액션을 보낼때마다 리덕스는 자동으로 리듀서를 실행할 것이다.
 function reducer(state=initialState,action){

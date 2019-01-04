@@ -2,6 +2,14 @@ import React, {Component} from 'react'; //리엑트를 불러온다.
 import {View, Text,StyleSheet,StatusBar } from 'react-native';//리엑트 네이티브에서 View와 Text, StyleSheet 불러옴
 import Button from '../Button'
 
+//시간포맷지정
+function formatTime(time){
+    let minutes=Math.floor(time/60);
+    time -=minutes *60
+    let seconds=parseInt(time%60,10);
+    return `${minutes<10?`0${minutes}` : minutes}:${seconds<10?`0${seconds}`:seconds}`;
+}
+
 class Timer extends Component{
     
     componentWillReceiveProps(nextProps){
@@ -36,7 +44,7 @@ class Timer extends Component{
             <View style={styles.container}>
                 <StatusBar barStyle={"light-content"}/>
                 <View style={styles.upper}>
-                    <Text style={styles.time}>25:00</Text>
+                    <Text style={styles.time}>{formatTime(timerDuration - elapsedTime)}</Text>
                 </View>
                 <View style={styles.lower}>
                     {!isPlaying&&(
