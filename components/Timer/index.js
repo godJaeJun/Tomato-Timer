@@ -1,43 +1,13 @@
-import React, {Component} from 'react'; //리엑트를 불러온다.
-import {View, Text,StyleSheet,StatusBar } from 'react-native';//리엑트 네이티브에서 View와 Text, StyleSheet 불러옴
-import Button from '../Button'
+import {connect} from 'react-redux';//컴포넌트를 스토어에 연결하는 것을 도와준다.
+import Timer from './presenter';
 
-class Timer extends Component{
-    render(){
-        return (
-            <View style={styles.container}>
-                <StatusBar barStyle={"light-content"}/>
-                <View style={styles.upper}>
-                    <Text style={styles.time}>25:00</Text>
-                </View>
-                <View style={styles.lower}>
-                    <Button iconName="play-circle" onPress={()=>alert("it works!")}/>
-                    <Button iconName="stop-circle" onPress={()=>alert("it works!")}/>
-                </View>
-            </View>
-        )
+function mapStateToProps(state){
+    const{isPlaying,elapsedTime,timerDuration}=state;
+    return{
+        isPlaying,
+        elapsedTime,
+        timerDuration
     }
 }
-const styles=StyleSheet.create({
-    container:{
-        flex:1,    //크기지정
-        backgroundColor:"#CE0B24"   //배경색지정
-    },
-    upper:{
-        flex:2,
-        justifyContent:"center",    //세로 가운데 지정
-        alignItems:"center",    //가로 가운데 지정
-    },
-    lower:{
-        flex:1,
-        justifyContent:"center",
-        alignItems:"center",
-    },
-    time:{
-        color:"white",  //글씨색지정
-        fontSize:120,   //폰트크기지정
-        fontWeight:"100"
-    },
-});
 
-export default Timer;
+export default connect(mapStateToProps)(Timer);
