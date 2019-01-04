@@ -18,6 +18,7 @@ function mapDispatchToProps(dispatch){
     return{
         startTimer:bindActionCreators(tomatoActions.startTimer,dispatch),
         restartTimer:bindActionCreators(tomatoActions.restartTimer,dispatch),
+        addSeconds:bindActionCreators(tomatoActions.addSeconds,dispatch)
     }
 }
 
