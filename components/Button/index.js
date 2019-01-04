@@ -16,3 +16,10 @@ Button.propTypes={
     onPress:PropTypes.func.isRequired   //눌렀을때의 반응을 function이어야 한다.
 }
 export default Button;
+/*
+{
+    isCounting:true|false,   //시작을 눌렀는지 정지를 눌렀는지
+    counterDuration:1500,   //25분을 초로바꿈 MAX
+    elapsedTime:0,         //카운팅을 시작한지 얼마나 지났는지 1500까지 
+}
+*/
