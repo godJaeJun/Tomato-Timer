@@ -84,6 +84,6 @@ const actionCreators={
     restartTimer,
     addSeconds
 }
-
+export {actionCreators};
 //Export Reducer 
 export default reducer;
